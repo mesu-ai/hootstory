@@ -1,0 +1,10 @@
+.home-header{
+    background-color:#3A3B3C ;
+    margin-top: 66px;
+    height: 73px;
+
+    display: flex;
+    align-items: center;
+    color: white;
+
+}
