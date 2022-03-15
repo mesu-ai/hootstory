@@ -1,19 +1,16 @@
 import React from 'react';
 import Container from '@mui/material/Container';
 import Header from './header/Header';
-import Recent from './recent/Recent';
+import RecentPost from './recent/RecentPost';
+import OldPost from './old/OldPost';
 
 
 const Home = () => {
     return (
-        <Container >
+        <Container sx={{minHeight:'100vh',maxHeight:'auto'}}>
            <Header/>
-           <Recent/>
-
-          
-
-
-
+           <RecentPost/>
+           <OldPost/>
         </Container>
     );
 };
