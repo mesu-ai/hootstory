@@ -23,13 +23,7 @@ const blogIconStyles = {
     height: '40px',
   };
 
-const Header = () => {
-    const [checked, setChecked] = React.useState();
-
-
-    const handleChange=()=>{
-
-    }
+const Header = ({longStories,shortStories,checkedLong,handleLong,handleShort,checkedShort}) => {
 
 
 
@@ -62,14 +56,14 @@ const Header = () => {
 
            <Box sx={{display:'flex'}}>
             <Box sx={{ ...commonStyles, borderRadius: '50%',ml:3}}>
-                0
-                </Box> 
+                {longStories.length}  
+            </Box> 
             
             <FormControlLabel
                 value="start"
                 control={<Switch
-                    checked={checked}
-                    onChange={handleChange}
+                    checked={checkedLong}
+                    onChange={handleLong}
                     inputProps={{ 'aria-label': 'controlled' }}
                 />}
                 label="Long stories"
@@ -79,17 +73,17 @@ const Header = () => {
 
            <Box sx={{display:'flex'}}>
             <Box sx={{ ...commonStyles, borderRadius: '50%',ml:3}}>
-                4
+                {shortStories.length}
                 </Box> 
             
             <FormControlLabel
                 value="start"
                 control={<Switch
-                    checked={checked}
-                    onChange={handleChange}
+                    checked={checkedShort}
+                    onChange={handleShort}
                     inputProps={{ 'aria-label': 'controlled' }}
                 />}
-                label="Long stories"
+                label="Short stories"
                 labelPlacement="start"
              />
            </Box>

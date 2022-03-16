@@ -7,7 +7,7 @@ import ShortPostCard from '../../postcard/ShortPostCard';
 // import PostCard from '../../postcard/PostCard';
 
 
-const RecentPost = ({stories}) => {
+const RecentPost = ({stories,checkedLong,checkedShort}) => {
 
     const longStories=stories.filter(story=>story.type==='long');
 
@@ -20,10 +20,18 @@ const RecentPost = ({stories}) => {
             <Typography gutterBottom component="div" sx={{textAlign:'start',color:'white',fontSize:'20px',fontWeight:'bold'}}>
                 Recent
             </Typography>
+
+            { checkedLong && 
+
             <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 4, sm: 8, md: 12 }}>
             {longStories.map(story=><LongPostCard story={story} key={Math.random()}></LongPostCard>)
             }
             </Grid>
+
+            }
+
+            {checkedShort &&
+
             <Box sx={{mt:2}}>
 
             <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 4, sm: 8, md: 12 }}>
@@ -31,6 +39,7 @@ const RecentPost = ({stories}) => {
             }
             </Grid>
             </Box>
+            }
             
         </Box>
     );

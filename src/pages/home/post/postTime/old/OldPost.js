@@ -6,7 +6,7 @@ import LongPostCard from '../../postcard/LongPostCard';
 import ShortPostCard from '../../postcard/ShortPostCard';
 
 
-const OldPost = ({stories}) => {
+const OldPost = ({stories,checkedLong,checkedShort}) => {
 
     const longStories=stories.filter(story=>story.type==='long');
 
@@ -21,10 +21,15 @@ const OldPost = ({stories}) => {
                 Old
             </Typography>
 
+            { checkedLong && 
+
             <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
             {longStories.map(story=><LongPostCard story={story} key={Math.random()}></LongPostCard>)
             }
             </Grid>
+            }
+
+            {checkedShort && 
             <Box sx={{mt:2}}>
 
             <Grid container spacing={{ xs: 2, md: 2}} columns={{ xs: 4, sm: 8, md: 12 }}>
@@ -32,6 +37,7 @@ const OldPost = ({stories}) => {
             }
             </Grid>
             </Box>
+            }
 
 
             
