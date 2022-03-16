@@ -4,6 +4,8 @@ import Typography from '@mui/material/Typography';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
+import Button from '@mui/material/Button';
+
 
 import '../Home.css';
 
@@ -23,7 +25,7 @@ const blogIconStyles = {
     height: '40px',
   };
 
-const Header = ({longStories,shortStories,checkedLong,handleLong,handleShort,checkedShort}) => {
+const Header = ({longStories,shortStories,checkedLong,handleLong,handleShort,checkedShort,handleDelete}) => {
 
 
 
@@ -40,15 +42,10 @@ const Header = ({longStories,shortStories,checkedLong,handleLong,handleShort,che
             </Box> 
 
             <Typography sx={{color:'white',fontSize:'20px',fontWeight:'bold',ml:1}}   component="div">
-                Blog
+              Blog
             </Typography>
 
-
-
-
-            <Typography sx={{textTransform:'capitalize',color:'red',ml:3}} variant="button" display="block" >
-             Delete all
-           </Typography>
+           <Button onClick={handleDelete} sx={{textTransform:'capitalize',color:'red',ml:3}}>Delete all</Button>
 
 
 

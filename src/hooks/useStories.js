@@ -4,7 +4,7 @@ const useStories = () => {
     const [stories,setStories]=useState([]);
 
     useEffect(()=>{
-        fetch('./data.json')
+        fetch('https://enigmatic-thicket-12068.herokuapp.com/hootstory')
         .then(res=>res.json())
         .then(data=>setStories(data));
 
